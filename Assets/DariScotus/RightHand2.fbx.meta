@@ -1,0 +1,339 @@
+fileFormatVersion: 2
+guid: ee103de5621b34145bb2266fb80b105f
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Himpitan
+    second: {fileID: 2100000, guid: c5b7a61a4cdac5b409cd9963743d1e11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lengan atas
+    second: {fileID: 2100000, guid: 09a5d46ad6f05d74c994ebda7d8ccc4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lengan bawah siku
+    second: {fileID: 2100000, guid: 3841cba06f050304da199fdc6157a0f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lengan_
+    second: {fileID: 2100000, guid: 48163bc11ed79624f918a2f97ef01a66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Palm and Fingers
+    second: {fileID: 2100000, guid: ce5eb68cec7ea774fb836ea5778499fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sambungan atas 1
+    second: {fileID: 2100000, guid: 1a52d0f3f2a032e4181acef77be97e9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sambungan bawah 1
+    second: {fileID: 2100000, guid: 71af56da3afcd1a49a329dc121a00518, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wrist
+    second: {fileID: 2100000, guid: 200dd350bcc983345953afe0180718d1, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Aksesoris_BaseColor
+    second: {fileID: 2800000, guid: df0a80f3c61676343976bc586771e1a2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Aksesoris_Emissive
+    second: {fileID: 2800000, guid: 4c83b0f24994de94594f0516128ada6c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Aksesoris_Metallic
+    second: {fileID: 2800000, guid: 5c22e9a811eac6a46afca37704243d8b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Aksesoris_Normal
+    second: {fileID: 2800000, guid: a2376725bad10fd4c8a3c9c82ab16f23, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Aksesoris_Roughness
+    second: {fileID: 2800000, guid: dccf2eb2362bf184fbd9e56509b84b19, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Himpitan_BaseColor
+    second: {fileID: 2800000, guid: b70e8e9b9c3a78141b864733537d9879, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Himpitan_Emissive
+    second: {fileID: 2800000, guid: ff9c47a19bf565547adaba3e428eedf3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Himpitan_Metallic
+    second: {fileID: 2800000, guid: 4e43701b8cf03cb448523af52f35442e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Himpitan_Normal
+    second: {fileID: 2800000, guid: 1e6f1d481150eb54994a71abbdd1adaa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Himpitan_Roughness
+    second: {fileID: 2800000, guid: 62c15f9137e26eb418e637de1596c182, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Lengan _BaseColor
+    second: {fileID: 2800000, guid: edc3599a2fec93041b0b1b18bdfd6512, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Lengan _Metallic
+    second: {fileID: 2800000, guid: 17fcf7258714df84abbec462de7f3cc4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Lengan _Normal
+    second: {fileID: 2800000, guid: 0fbd848e08b9e524da29b820e8da8503, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Lengan _Roughness
+    second: {fileID: 2800000, guid: 50dccdc2d7961a647b32dbb79a4fb40e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Lengan atas_BaseColor
+    second: {fileID: 2800000, guid: 30f553c844be6984e970cc0fb1947547, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Lengan atas_Metallic
+    second: {fileID: 2800000, guid: 37f5dd10fccf26d45a5b365751ce6b3d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Lengan atas_Normal
+    second: {fileID: 2800000, guid: c804f5fe24b3b554b84b2e509b6c04b0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Lengan atas_Roughness
+    second: {fileID: 2800000, guid: efd59510b763e1c48acf172842ca613e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Lengan bawah siku_BaseColor
+    second: {fileID: 2800000, guid: 95b30494e47f1ff4da37bd7a2b023828, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Lengan bawah siku_Metallic
+    second: {fileID: 2800000, guid: f006f4741ba5b534391a68f828cc139d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Lengan bawah siku_Normal
+    second: {fileID: 2800000, guid: 10edb3408a0d9c64fade15c59ec1cd6b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Lengan bawah siku_Roughness
+    second: {fileID: 2800000, guid: c110d3e50f397e64288418078e88cc04, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Palm and Fingers_BaseColor
+    second: {fileID: 2800000, guid: f17f1afb18f1fa04db6a8b61ea052c16, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Palm and Fingers_Metallic
+    second: {fileID: 2800000, guid: a34374835b25a52409c159063ef06817, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Palm and Fingers_Normal
+    second: {fileID: 2800000, guid: 7a5080654e53aa841bd41cbee957c3d1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Palm and Fingers_Roughness
+    second: {fileID: 2800000, guid: 3ca2712624000314f945279ee4143336, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Sambungan atas 1_BaseColor
+    second: {fileID: 2800000, guid: 442b4da723f2e0244ab8a63cda9f3582, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Sambungan atas 1_Metallic
+    second: {fileID: 2800000, guid: 88bd13ab7f2794e42a0ca92962056a88, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Sambungan atas 1_Normal
+    second: {fileID: 2800000, guid: afad5a3144cf1714dbe073d0654e9b69, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Sambungan atas 1_Roughness
+    second: {fileID: 2800000, guid: 04551b2a41a147649ac04bd424de38b5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Sambungan bawah 1_BaseColor
+    second: {fileID: 2800000, guid: 18b0942f21f46e543b7b3730434ffef5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Sambungan bawah 1_Metallic
+    second: {fileID: 2800000, guid: 028343f071cfc0d49a21771f1d9bffd0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Sambungan bawah 1_Normal
+    second: {fileID: 2800000, guid: d043f2f209e25384bb7ce4e2dae8660b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Sambungan bawah 1_Roughness
+    second: {fileID: 2800000, guid: cfed06537b8135c4f8c5b8e2ff1da36e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Wrist_BaseColor
+    second: {fileID: 2800000, guid: ec297602364a18f43a1bb2ee7e4303c3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Wrist_Metallic
+    second: {fileID: 2800000, guid: afc7aeb7fcf623644b86900bc7f81503, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Wrist_Normal
+    second: {fileID: 2800000, guid: d9e80bc1e93bac64a8d188343fda31c1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Lengan4Exp_Wrist_Roughness
+    second: {fileID: 2800000, guid: 5a4d75883a84afd46a874ad76a38226a, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
