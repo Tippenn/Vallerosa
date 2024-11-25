@@ -1,0 +1,539 @@
+fileFormatVersion: 2
+guid: c346834c0b9fe9a4195b446776867168
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bridge
+    second: {fileID: 2100000, guid: 72fecfd6e67c84944b984fe0dc3242da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CaveColor.001
+    second: {fileID: 2100000, guid: 21e34098c145c0b48a0c2ad758d91dfd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CaveColor.002
+    second: {fileID: 2100000, guid: 282c9fb982fd24140b8279532c20d5c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CaveColor.003
+    second: {fileID: 2100000, guid: f56af71c857ee8f4ca22ae3941e0ae47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CaveColor.005
+    second: {fileID: 2100000, guid: bb2eb2b3009be7d48863978740b7bc82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CaveColor.007
+    second: {fileID: 2100000, guid: f2e2ae0ed3704204cafb344f83ec82be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CaveColor.008
+    second: {fileID: 2100000, guid: 9a351e239b610f94aa617965ae14996e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CaveColor.009
+    second: {fileID: 2100000, guid: 6e6c327d2bd0b1a4ebd3104b68188db0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CaveColor.011
+    second: {fileID: 2100000, guid: e28d7f7c8ea1c884996d928d41e9e03b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CaveColor.012
+    second: {fileID: 2100000, guid: 246023778a2665e459ebf3779dd7afd9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor.001
+    second: {fileID: 2100000, guid: ad36d28ad9d35d6499416c0bc94fd816, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GTower2
+    second: {fileID: 2100000, guid: f9fa73745d8c68945986d09f829f618a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: JembatanMainArena
+    second: {fileID: 2100000, guid: a624549d071978448b813d66e7990549, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainArena
+    second: {fileID: 2100000, guid: 13be27556108e2742b68d8be81e4caa7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 627be1b9dc8756542a2ffc95bf19590b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 84d1a1ac521d042478e8af7bad87893c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 4e459ab5fa71b234c8190e9d319cefdc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: b1b4297667bf81a4eafa6b69bea99883, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PillarStep
+    second: {fileID: 2100000, guid: 07a34207b0267f54b99f411e7e0f19d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SetelahJembatan
+    second: {fileID: 2100000, guid: b93f90b5f23b4fb4ba588d87d3826fad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tower4
+    second: {fileID: 2100000, guid: eac85e99c759f324895a609981114eb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tower5
+    second: {fileID: 2100000, guid: 325101ec0604a76448d7e9ebaf3f8826, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TowerLancip
+    second: {fileID: 2100000, guid: 0b84525fba4a71a428acdacd0ef892a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walls.001
+    second: {fileID: 2100000, guid: 67f8ed5edca8580429c0fb4f3edff6d4, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: JembatanMainArena_JembatanMainArena_BaseColor
+    second: {fileID: 2800000, guid: 575fa811531df6c4c9beb8ffa4a3ff45, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: JembatanMainArena_JembatanMainArena_Emissive
+    second: {fileID: 2800000, guid: b5877559c3274f74eac8004a6a5292d3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: JembatanMainArena_JembatanMainArena_Metallic
+    second: {fileID: 2800000, guid: f95c7ec979af8cc49b8048a9b8ed8815, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: JembatanMainArena_JembatanMainArena_Normal
+    second: {fileID: 2800000, guid: 729d21dab9ffef94b9bdb01d2b976cc7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: JembatanMainArena_JembatanMainArena_Roughness
+    second: {fileID: 2800000, guid: e77294a9df36e514d949602519f261e1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Jembatan_DefaultMaterial_BaseColor
+    second: {fileID: 2800000, guid: ccdd37100a97eff448aa5d6c160e4a3c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Jembatan_DefaultMaterial_Emissive
+    second: {fileID: 2800000, guid: 1fc1c490c14a74a4d9260b14e923c2e5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Jembatan_DefaultMaterial_Metallic
+    second: {fileID: 2800000, guid: ef83ef4eeb95c8246b9beb84a7f51c53, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Jembatan_DefaultMaterial_Normal
+    second: {fileID: 2800000, guid: 2ed9ef6bca9d4e14b88d2befa92f930c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Jembatan_DefaultMaterial_Roughness
+    second: {fileID: 2800000, guid: fd6e4f5916b4bb9408707301227084a4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MainArena_DefaultMaterial_BaseColor
+    second: {fileID: 2800000, guid: 555be78408f3f6749a4c038470a5f852, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MainArena_DefaultMaterial_Emissive
+    second: {fileID: 2800000, guid: 3e04388b2f76da74290b9758c8966e0a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MainArena_DefaultMaterial_Metallic
+    second: {fileID: 2800000, guid: 09feed8f7226e7245a0c4e47d204f722, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MainArena_DefaultMaterial_Normal
+    second: {fileID: 2800000, guid: ceb86ec45fc1bba489944d22c66559b5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: MainArena_DefaultMaterial_Roughness
+    second: {fileID: 2800000, guid: a44e284cc5688034ab1b882bfe003714, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PillarStep_PillarStep_BaseColor
+    second: {fileID: 2800000, guid: 9b68ce181977bc34f867e535c859b8eb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PillarStep_PillarStep_Emissive
+    second: {fileID: 2800000, guid: 00f29a0579bab034fb07f17f8eb984ed, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PillarStep_PillarStep_Metallic
+    second: {fileID: 2800000, guid: fab8e849212d7264a830275fefbc9642, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PillarStep_PillarStep_Normal
+    second: {fileID: 2800000, guid: 1bed333d4201f6144b1716bfc234c20c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PillarStep_PillarStep_Roughness
+    second: {fileID: 2800000, guid: dc172df0a4ecab24daa6fc3526c2f629, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: StairsFix_DefaultMaterial_BaseColor
+    second: {fileID: 2800000, guid: f953841da04101a49af2e470619bc18e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: StairsFix_DefaultMaterial_Metallic
+    second: {fileID: 2800000, guid: 7cd2da0faffeeb44fb1132edf016c1ef, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: StairsFix_DefaultMaterial_Normal
+    second: {fileID: 2800000, guid: c8957704d5d283748ab0391797c9836a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: StairsFix_DefaultMaterial_Roughness
+    second: {fileID: 2800000, guid: 0af8dc468255b0742824dc7bc2a52bb7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1Fix_Floor_BaseColor
+    second: {fileID: 2800000, guid: b2e4402c0edda7d40802f87876a0ef24, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1Fix_Floor_Metallic
+    second: {fileID: 2800000, guid: 2cf329058b20f7d4b93eaac40f211111, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1Fix_Floor_Normal
+    second: {fileID: 2800000, guid: a3d88c8b528768448bc238e4b911bfd6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1Fix_Floor_Roughness
+    second: {fileID: 2800000, guid: 623002c7a9213a44cb9452ebea7e828c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1Fix_Walls_BaseColor
+    second: {fileID: 2800000, guid: f4d7dcbf41422c84f8d1bd68bfaa47ba, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1Fix_Walls_Emissive
+    second: {fileID: 2800000, guid: 41134cc6bfb581148840a28cc929a84d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1Fix_Walls_Metallic
+    second: {fileID: 2800000, guid: 4f864b42a8c20de4d88ce5e198a06fa3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1Fix_Walls_Normal
+    second: {fileID: 2800000, guid: 3da243a91636dfb428eae67be7ef9d32, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1Fix_Walls_Roughness
+    second: {fileID: 2800000, guid: d2ed0e89e72a89b42932cf81b8a53f1d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower2Fix_DefaultMaterial_BaseColor
+    second: {fileID: 2800000, guid: cce6fd5459ca03644b1cc5529889fd74, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower2Fix_DefaultMaterial_Metallic
+    second: {fileID: 2800000, guid: b92999709598b8741b4779f08d693671, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower2Fix_DefaultMaterial_Normal
+    second: {fileID: 2800000, guid: 3809798a88fc3cf47be770970ced93ae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower2Fix_DefaultMaterial_Roughness
+    second: {fileID: 2800000, guid: 52d327e8e10640146a68a698b7f889a0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower3Bridge_DefaultMaterial_BaseColor
+    second: {fileID: 2800000, guid: ee99729ba5f64204890bcf2ee6cd292e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower3Bridge_DefaultMaterial_Emissive
+    second: {fileID: 2800000, guid: 377132280721a0e47b3aeb50c1d7b893, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower3Bridge_DefaultMaterial_Metallic
+    second: {fileID: 2800000, guid: a6f11cc927e4903469695bbc02f523bc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower3Bridge_DefaultMaterial_Normal
+    second: {fileID: 2800000, guid: da45653fe1f088d4fa0af454ae41b374, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower3Bridge_DefaultMaterial_Roughness
+    second: {fileID: 2800000, guid: d690d33bf3be12c43bcedbce884f90f9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowerHalo_Tower5_BaseColor
+    second: {fileID: 2800000, guid: 51bde4e1e5667374e9f73127e63e7ca1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowerHalo_Tower5_Emissive
+    second: {fileID: 2800000, guid: b158d505dee88ec4ebc3c779dc7a41ee, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowerHalo_Tower5_Metallic
+    second: {fileID: 2800000, guid: 8c077c5dcbe0c2d4f96aa48e591065c5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowerHalo_Tower5_Normal
+    second: {fileID: 2800000, guid: d8b955f52f005eb428cfbfc739570a12, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowerHalo_Tower5_Roughness
+    second: {fileID: 2800000, guid: 4a54d044056f2bd4f99727e989b56708, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowerLancip_TowerLancip_BaseColor
+    second: {fileID: 2800000, guid: 5c215a4d6ca6acb4880689677fb75603, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowerLancip_TowerLancip_Emissive
+    second: {fileID: 2800000, guid: a4df0920c316c704595cda3c3fad1f1e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowerLancip_TowerLancip_Metallic
+    second: {fileID: 2800000, guid: c7d43871e3139364da1282f9fd27860a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowerLancip_TowerLancip_Normal
+    second: {fileID: 2800000, guid: 54f689a4167a11f4cabe938795aaa6e0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowerLancip_TowerLancip_Roughness
+    second: {fileID: 2800000, guid: fc4b27477a0076f45b099915e16a0b76, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowerSolo_DefaultMaterial_BaseColor
+    second: {fileID: 2800000, guid: d8826b1e5d3255d4da78e26684c2d9b5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowerSolo_DefaultMaterial_Emissive
+    second: {fileID: 2800000, guid: fbed4757c80883e4886859aa00a07ec4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowerSolo_DefaultMaterial_Metallic
+    second: {fileID: 2800000, guid: a2746577fdabb5d4baf1cc30310b24ba, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowerSolo_DefaultMaterial_Normal
+    second: {fileID: 2800000, guid: 7a79f163c22994b459d8adac129ef942, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowerSolo_DefaultMaterial_Roughness
+    second: {fileID: 2800000, guid: ff9ed60b54e2dae45a3c6819d434fd29, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowersetelahJembatan_DefaultMaterial_BaseColor
+    second: {fileID: 2800000, guid: c3350eb363f810e4695e841fca90e350, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowersetelahJembatan_DefaultMaterial_Emissive
+    second: {fileID: 2800000, guid: 23e0ce4a8f1220a408df74943b8b3c1d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowersetelahJembatan_DefaultMaterial_Metallic
+    second: {fileID: 2800000, guid: da8372819327fc44eae2aead62ff4843, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowersetelahJembatan_DefaultMaterial_Normal
+    second: {fileID: 2800000, guid: 8eb78220baaf2a9469c7114b8e397ee4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TowersetelahJembatan_DefaultMaterial_Roughness
+    second: {fileID: 2800000, guid: cf1d74f0db9dabf4cad985aaf4e7b8a8, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
