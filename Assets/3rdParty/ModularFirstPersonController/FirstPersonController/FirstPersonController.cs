@@ -116,6 +116,19 @@ public class FirstPersonController : MonoBehaviour
     private Vector3 originalScale;
 
     #endregion
+
+    #region Slide
+    public float slideHeight = .75f;
+    public float speedIncrease = 5f;
+
+    //Internal Variables
+    private bool isSliding = false;
+    private bool canSlide = false;
+    private float canSlideThreshold = 1f;
+    private float canSlideTimer = 0f;
+
+    #endregion
+
     #endregion
 
     #region Head Bob
@@ -279,6 +292,7 @@ public class FirstPersonController : MonoBehaviour
             if(isSprinting)
             {
                 isZoomed = false;
+                canSlideTimer += Time.deltaTime;
                 playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, sprintFOV, sprintFOVStepTime * Time.deltaTime);
 
                 // Drain sprint remaining while sprinting
@@ -291,9 +305,17 @@ public class FirstPersonController : MonoBehaviour
                         isSprintCooldown = true;
                     }
                 }
+
+                // Check For Slide
+                if(canSlideTimer > canSlideThreshold)
+                {
+                    canSlide = true;
+                }
             }
             else
             {
+                canSlideTimer = 0f;
+                playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, fov, sprintFOVStepTime * Time.deltaTime);
                 // Regain sprint while not sprinting
                 sprintRemaining = Mathf.Clamp(sprintRemaining += 1 * Time.deltaTime, 0, sprintDuration);
             }
@@ -335,7 +357,7 @@ public class FirstPersonController : MonoBehaviour
 
         #region Crouch
 
-        if (enableCrouch)
+        if (enableCrouch && !isSprinting)
         {
             if(Input.GetKeyDown(crouchKey) && !holdToCrouch)
             {
@@ -354,6 +376,28 @@ public class FirstPersonController : MonoBehaviour
             }
         }
 
+        #endregion
+
+        #region Slide
+
+        if (enableCrouch && isSprinting && canSlide)
+        {
+            if (Input.GetKeyDown(crouchKey) && !holdToCrouch)
+            {
+                Slide();
+            }
+
+            if (Input.GetKeyDown(crouchKey) && holdToCrouch)
+            {
+                isSliding = false;
+                Slide();
+            }
+            else if (Input.GetKeyUp(crouchKey) && holdToCrouch)
+            {
+                isSliding = true;
+                Slide();
+            }
+        }
         #endregion
 
         CheckGround();
@@ -384,7 +428,8 @@ public class FirstPersonController : MonoBehaviour
                 isWalking = false;
             }
 
-            // All movement calculations shile sprint is active
+            // All movement calculations while sprint is active
+            
             if (enableSprint && Input.GetKey(sprintKey) && sprintRemaining > 0f && !isSprintCooldown)
             {
                 targetVelocity = transform.TransformDirection(targetVelocity) * sprintSpeed;
@@ -436,6 +481,7 @@ public class FirstPersonController : MonoBehaviour
 
                 rb.AddForce(velocityChange, ForceMode.VelocityChange);
             }
+
         }
 
         #endregion
@@ -494,6 +540,29 @@ public class FirstPersonController : MonoBehaviour
             walkSpeed *= speedReduction;
 
             isCrouched = true;
+        }
+    }
+
+    private void Slide()
+    {
+        Debug.Log("Slide");
+        // Stands player up to full height
+        // Brings walkSpeed back up to original speed
+        if (isSliding)
+        {
+            transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
+            walkSpeed /= speedIncrease;
+            enableHeadBob = true;
+            isSliding = false;
+        }
+        // Crouches player down to set height
+        // Reduces walkSpeed
+        else
+        {
+            transform.localScale = new Vector3(originalScale.x, slideHeight, originalScale.z);
+            walkSpeed *= speedIncrease;
+            enableHeadBob = false;
+            isSliding = true;
         }
     }
 

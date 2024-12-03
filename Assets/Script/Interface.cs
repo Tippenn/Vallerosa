@@ -26,3 +26,8 @@ public interface IParryable
 {
     void Parried();
 }
+
+public interface IInteractible
+{
+    void Interact();
+}
