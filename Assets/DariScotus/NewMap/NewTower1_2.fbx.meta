@@ -1,0 +1,299 @@
+fileFormatVersion: 2
+guid: e09dd1aeb437c54479092d75d0406859
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bridge.001
+    second: {fileID: 2100000, guid: d178b0c425066504e91cc8bfa62934ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor
+    second: {fileID: 2100000, guid: d5f7bf4afa6c48147b417ad800138f3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GTower2
+    second: {fileID: 2100000, guid: 1a8f2187aacf5e7438d5ef8e54ba62dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 00ca93d89118bca4690eedb4c71b6255, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: ed012510f04372a4e875559223648452, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: 4d8362cdf6035824cbdb765b46039c04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PilarTower1
+    second: {fileID: 2100000, guid: 642c0fc01a9b73e428cf0455c28ce85d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: atas'
+    second: {fileID: 2100000, guid: 63dc50c51f811f945bbea5e5cfc41d4c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door
+    second: {fileID: 2100000, guid: 2f0ee57ee42ed6b4184f7fa1d5487ba4, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bridge_Bridge.001_AlbedoTransparency
+    second: {fileID: 2800000, guid: ebb504f9460b1c14394d174f78f18d48, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bridge_Bridge.001_Normal
+    second: {fileID: 2800000, guid: 606c58380c428b04197db1680df71ef9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Bridge_Bridge.001_SpecularSmoothness
+    second: {fileID: 2800000, guid: d506b4c2680d49a468b65edbe4b6f804, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: StairsFix_DefaultMaterial_BaseColor
+    second: {fileID: 2800000, guid: fe070f3f1a643ed41b809ba20471e3d2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: StairsFix_DefaultMaterial_Metallic
+    second: {fileID: 2800000, guid: 7148c5f81ac4938479a6d8e2ee3e7fac, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: StairsFix_DefaultMaterial_Normal
+    second: {fileID: 2800000, guid: f1d47ee4cdedeef4da1a2514197d9b93, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: StairsFix_DefaultMaterial_Roughness
+    second: {fileID: 2800000, guid: 981724c7e932a52478f728d4eaa45027, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1Miaw_Material.004_AlbedoTransparency
+    second: {fileID: 2800000, guid: 5c216b5cd7f46954aa84729c75285271, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1Miaw_Material.004_Normal
+    second: {fileID: 2800000, guid: a165f3bdbab399a4ea5e9b692277d404, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1Miaw_Material.004_SpecularSmoothness
+    second: {fileID: 2800000, guid: 5e06301182a34a4469679ac68378ee01, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1_Floor_AlbedoTransparency
+    second: {fileID: 2800000, guid: a9088719e19728d44ad89b70f7c33af8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1_Floor_Normal
+    second: {fileID: 2800000, guid: b87d5b777ff6e0d4ab42642b94ea79e3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1_Floor_SpecularSmoothness
+    second: {fileID: 2800000, guid: 54b5f9aa3df140741a863b6c49322cd7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1_Material.005_AlbedoTransparency
+    second: {fileID: 2800000, guid: 339b25ddb6d26e2459bc816c033e1c0b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1_Material.005_Normal
+    second: {fileID: 2800000, guid: af2d999772e91df47906dc13298e2098, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1_Material.005_SpecularSmoothness
+    second: {fileID: 2800000, guid: a1c364a49d9527b42b66d88390aa437f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1_atas'_AlbedoTransparency
+    second: {fileID: 2800000, guid: ad16e7bcb8029f24a8ab40e03f912562, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1_atas'_Normal
+    second: {fileID: 2800000, guid: 936630d841465d74189bc55851f8fac7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1_atas'_SpecularSmoothness
+    second: {fileID: 2800000, guid: 68133828c1869a545aa93c602822e6d9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1front_door_AlbedoTransparency
+    second: {fileID: 2800000, guid: cc7d92a6b9a708b43bf6989e79d9cf27, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1front_door_Normal
+    second: {fileID: 2800000, guid: 440328f48e649ae4cac20d5381a8509a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1front_door_SpecularSmoothness
+    second: {fileID: 2800000, guid: 50d5f87d01a624a479ae2f127e82f5ac, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1pillar_PilarTower1_AlbedoTransparency
+    second: {fileID: 2800000, guid: 86f7248d94cd92046b420f565a2a4c12, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1pillar_PilarTower1_Normal
+    second: {fileID: 2800000, guid: 8b2bf30bb195afc41b9169d748d235e3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower1pillar_PilarTower1_SpecularSmoothness
+    second: {fileID: 2800000, guid: f2010d0cd4536244ba84b2b726c9fa01, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower2Fix_DefaultMaterial_BaseColor
+    second: {fileID: 2800000, guid: 41b0ef44a3c1d7649be9796b33533bd9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower2Fix_DefaultMaterial_Metallic
+    second: {fileID: 2800000, guid: c923d73ba05ec8645a091202d9407ea7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower2Fix_DefaultMaterial_Normal
+    second: {fileID: 2800000, guid: 5afc817be808a51499750df3ba1eeda9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tower2Fix_DefaultMaterial_Roughness
+    second: {fileID: 2800000, guid: 0db0ab677fe8f174eb85f3349baf60be, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

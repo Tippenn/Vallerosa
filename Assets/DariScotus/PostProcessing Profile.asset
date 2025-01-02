@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6134783844420619848
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221518ef91623a7438a71fef23660601, type: 3}
+  m_Name: WhiteBalance
+  m_EditorClassIdentifier: 
+  active: 1
+  temperature:
+    m_OverrideState: 1
+    m_Value: 36
+  tint:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!114 &-5932039571623731216
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -55,13 +74,13 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 0.9968564, y: 1, z: 0.8889862, w: 0.10062898}
+    m_Value: {x: 1, y: 0.890432, z: 0.6027713, w: 0.10062898}
   midtones:
     m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_Value: {x: 0.98774076, y: 0.9945719, z: 1, w: 0}
   highlights:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.88570476, z: 0.6763493, w: -0.026178008}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
@@ -89,13 +108,13 @@ MonoBehaviour:
   active: 1
   lift:
     m_OverrideState: 1
-    m_Value: {x: 0.9163079, y: 1, z: 0.66451395, w: 0}
+    m_Value: {x: 1, y: 0.86209416, z: 0.35613543, w: 0}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 0.88354605, y: 1, z: 0.6951671, w: -0.15094368}
+    m_Value: {x: 0.61035526, y: 1, z: 0, w: -0.072409645}
   gain:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 0.9086065, y: 1, z: 0.34537953, w: 0.3054096}
 --- !u!114 &-2472075712018352987
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -207,6 +226,8 @@ MonoBehaviour:
   - {fileID: -5932039571623731216}
   - {fileID: -235363600091327343}
   - {fileID: -2855583416366055541}
+  - {fileID: 8151754396574257020}
+  - {fileID: -6134783844420619848}
 --- !u!114 &5428306110627226736
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -279,3 +300,31 @@ MonoBehaviour:
   texture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
+--- !u!114 &8151754396574257020
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
+  m_Name: ColorAdjustments
+  m_EditorClassIdentifier: 
+  active: 1
+  postExposure:
+    m_OverrideState: 1
+    m_Value: 0.36
+  contrast:
+    m_OverrideState: 1
+    m_Value: 1
+  colorFilter:
+    m_OverrideState: 1
+    m_Value: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
+  hueShift:
+    m_OverrideState: 0
+    m_Value: 0
+  saturation:
+    m_OverrideState: 1
+    m_Value: -26
