@@ -44,21 +44,8 @@ public class PlayerHeadBob : MonoBehaviour
     {
         if (PlayerMovement.Instance.isWalking)
         {
-            // Calculates HeadBob speed during sprint
-            if (PlayerMovement.Instance.isSprinting)
-            {
-                timer += Time.deltaTime * (bobSpeed + PlayerMovement.Instance.sprintSpeed);
-            }
-            // Calculates HeadBob speed during crouched movement
-            else if (PlayerMovement.Instance.isCrouched)
-            {
-                timer += Time.deltaTime * (bobSpeed * PlayerMovement.Instance.speedReduction);
-            }
-            // Calculates HeadBob speed during walking
-            else
-            {
-                timer += Time.deltaTime * bobSpeed;
-            }
+            timer += Time.deltaTime * bobSpeed;
+
             // Applies HeadBob movement
             joint.localPosition = new Vector3(jointOriginalPos.x + Mathf.Sin(timer) * bobAmount.x, jointOriginalPos.y + Mathf.Sin(timer) * bobAmount.y, jointOriginalPos.z + Mathf.Sin(timer) * bobAmount.z);
         }

@@ -13,6 +13,7 @@ public class PlayerStats : MonoBehaviour,IDamageable
     public RectTransform energyBGDisplay;
     public RectTransform magDisplay;
     public RectTransform magBGDisplay;
+    public GameObject deadCanvas;
 
     [Header("Stats")]
     public float currentHealth;
@@ -21,6 +22,8 @@ public class PlayerStats : MonoBehaviour,IDamageable
     public float maxEnergy;
     public float currentMag;
     public float maxMag;
+    public bool isDead;
+    public bool isWin;
 
     private void Awake()
     {
@@ -37,6 +40,11 @@ public class PlayerStats : MonoBehaviour,IDamageable
     // Update is called once per frame
     void Update()
     {
+        if (PlayerStats.Instance.isDead || PlayerStats.Instance.isWin)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            return;
+        }   
         UpdateHealthDisplay();
         UpdateEnergyDisplay();
         UpdateMagDisplay();
@@ -45,9 +53,28 @@ public class PlayerStats : MonoBehaviour,IDamageable
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+        AddEnergy(15f);
         if (currentHealth < 0)
         {
-            Debug.Log("You ded");
+            Dead();
+        }
+    }
+
+    public void AddHealth(float health)
+    {
+        currentHealth += health;
+        if(currentHealth >= maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+    }
+
+    public void AddEnergy(float energy)
+    {
+        currentEnergy += energy;
+        if(currentEnergy >= maxEnergy)
+        {
+            currentEnergy = maxEnergy;
         }
     }
 
@@ -64,5 +91,18 @@ public class PlayerStats : MonoBehaviour,IDamageable
     public void UpdateMagDisplay()
     {
         magDisplay.sizeDelta = new Vector2((magBGDisplay.sizeDelta.x), (currentMag / maxMag) * magBGDisplay.sizeDelta.y);
+    }
+    
+    public void Dead()
+    {
+        Time.timeScale = 0f;
+        deadCanvas.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        isDead = true;
+        Invoke(nameof(RestartLevel), 2f);
+    }
+    public void RestartLevel()
+    {
+        LevelManager.instance.RestartLevel();
     }
 }

@@ -19,7 +19,9 @@ public class PlayerCamera : MonoBehaviour
     private float yaw = 0.0f;
     private float pitch = 0.0f;
 
-
+    //crosshair
+    public Sprite crosshairImage;
+    [SerializeField]private Image crosshairObject;
 
     private void Awake()
     {
@@ -29,10 +31,15 @@ public class PlayerCamera : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        crosshairObject.sprite = crosshairImage;
     }
 
     void Update()
     {
+        if (PlayerStats.Instance.isDead || PlayerStats.Instance.isWin)
+        {
+            return;
+        }
         #region Camera
         yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
 
@@ -46,9 +53,9 @@ public class PlayerCamera : MonoBehaviour
         #endregion
 
         #region Sprinting
-        if(PlayerMovement.Instance.isSprinting)
+        if(PlayerMovement.Instance.isSliding)
         {
-            playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, sprintFOV, sprintFOVStepTime * Time.deltaTime);
+            playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, fov, sprintFOVStepTime * Time.deltaTime);
         }
         else
         {

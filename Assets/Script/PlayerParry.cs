@@ -9,14 +9,25 @@ public class PlayerParry : MonoBehaviour
     public bool readyToParry = true;
     public float parryCooldown = 0.5f;
 
+    private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (PlayerStats.Instance.isDead || PlayerStats.Instance.isWin)
+        {
+            return;
+        }
         if (Input.GetButtonDown("Fire2") && readyToParry)
         {
             Debug.Log("attacking");
             readyToParry = false;
-            Parry();
+            animator.SetTrigger("Parry");
             Invoke(nameof(ResetParry), parryCooldown);
         }
     }
@@ -31,6 +42,7 @@ public class PlayerParry : MonoBehaviour
             IParryable par = unit.GetComponent<IParryable>();
             if (par != null)
             {
+                PlayerStats.Instance.AddEnergy(25f);
                 par.Parried();
             }
         }

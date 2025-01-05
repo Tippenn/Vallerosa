@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
@@ -11,58 +13,76 @@ public class PlayerMovement : MonoBehaviour
 
     #region Movement Variables
 
+    #region Walking
+    [Header("Walking")]
     public bool playerCanMove = true;
     public float walkSpeed = 5f;
     public float maxVelocityChange = 10f;
     public bool isWalking = false;
+    #endregion
 
-    #region Sprint
-
-    public KeyCode sprintKey = KeyCode.LeftShift;
-    public float sprintSpeed = 7f;
-    public float sprintFOV = 80f;
-    public float sprintFOVStepTime = 10f;
+    #region Dash
+    [Header("Dash")]
+    public KeyCode dashKey = KeyCode.LeftShift;
+    public float dashForce = 20f;
+    public float dashSpeedIncrease = 2f;
+    public float dashSpeedAmp = 1.2f;
+    public float dashFOV = 80f;
+    public float dashFOVStepTime = 10f;
+    public float maxDashDuration = 2f;
+    public Vector3 dashDirection;
 
     // Sprint Bar
-    public bool isSprinting = false;
-
+    public bool isDashing = false;
+    public bool canDash = true;
+    public bool justDash = false;
     #endregion
 
     #region Jump
-
+    [Header("Jump")]
     public bool enableJump = true;
     public KeyCode jumpKey = KeyCode.Space;
     public float jumpPower = 5f;
+    public float maxJumpAmount = 2f;
 
     // Internal Variables
-    private bool isGrounded = false;
+    public bool isGrounded = false;
+    public float jumpAmount = 0f;
+    public bool waitBuffer;
+    public float waitBufferDuration = 0.2f;
 
     #endregion
 
-    #region Crouch
-
+    #region GroundSlam
+    [Header("GroundSlam")]
     public bool enableCrouch = true;
-    public KeyCode crouchKey = KeyCode.LeftControl;
-    public float crouchHeight = .75f;
-    public float speedReduction = .5f;
+    public KeyCode groundSlamKey = KeyCode.LeftControl;
+    public float groundSlamLinger = 0.5f;
+    public float groundSlamForce = 15f;
+    public float groundSlamAmp = 1.6f;
+    public float groundSlamRadius = 5f;
+    public float groundSlamDamage = 20f;
+    public LayerMask enemyLayers;
 
     // Internal Variables
-    public bool isCrouched = false;
+    public bool isGroundSlam = false;
+    public bool justGroundSlam = false;
     private Vector3 originalScale;
 
     #endregion
 
     #region Slide
+    [Header("Slide")]
     public float slideHeight = .75f;
-    public float speedIncrease = 1.5f;
+    public float slideSpeed = 8f;
+    public float slideAmp = 1.6f;
+    public bool justSlide = false;
+    public KeyCode slideKey = KeyCode.LeftControl;
+    public Vector3 slideDirection;
 
     //Internal Variables
     public bool isSliding = false;
-    private bool canSlide = false;
-    private float canSlideThreshold = 1f;
-    private float canSlideTimer = 0f;
-    private float slideTimer = 0f;
-    private float maxSlideTimer = 1f;
+    private bool canSlide = true;
 
     #endregion
 
@@ -81,63 +101,68 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         #region Sprint
-        if (isSprinting)
-        {   
-            canSlideTimer += Time.deltaTime;
-
-            // Check For Slide
-            if (canSlideTimer > canSlideThreshold)
-            {
-                canSlide = true;
-            }
-        }
-        else
-        {
-            canSlideTimer = 0f;
-        }
 
         #endregion
 
         #region Jump
 
         // Gets input and calls jump method
-        if (enableJump && Input.GetKeyDown(jumpKey) && isGrounded)
+        if (enableJump && Input.GetKeyDown(jumpKey) && jumpAmount > 0f)
         {
             Jump();
         }
 
+        //recovery
+        if(isGrounded)
+        {
+            jumpAmount = 2f;
+        }
+
         #endregion
 
-        #region Crouch & Slide
+        #region Slide
 
         //sliding
-        if (enableCrouch && isSprinting && canSlide)
+        if (isGrounded)
         {
-
-            if (Input.GetKeyDown(crouchKey))
+            if (Input.GetKeyDown(slideKey))
             {
+                Debug.Log("isSliding");
                 isSliding = false;
                 Slide();
             }
-            else if (Input.GetKeyUp(crouchKey) && isSliding)
+            else if (Input.GetKeyUp(slideKey) && isSliding)
             {
                 isSliding = true;
                 Slide();
             }
         }
-        //crouching
-        else if (enableCrouch && !isSprinting)
-        {
+        #endregion
 
-            if (Input.GetKeyDown(crouchKey))
+        #region GroundSlam
+        if(!isGrounded && !isGroundSlam)
+        {
+            if (Input.GetKeyDown(groundSlamKey))
             {
-                isCrouched = false;
-                Crouch();
+                GroundSlam();
             }
-            else if (Input.GetKeyUp(crouchKey))
+        }
+
+        if (isGroundSlam)
+        {
+            if (isGrounded)
             {
-                isCrouched = true;
-                Crouch();
+               GroundSlamShockwave();
+            }
+        }
+        #endregion
+
+        #region Dash
+        if (canDash)
+        {
+            if (Input.GetKeyDown(dashKey))
+            {
+                Dash();
             }
         }
         #endregion
@@ -150,6 +175,7 @@ public class PlayerMovement : MonoBehaviour
         if (playerCanMove)
         {
             // Calculate how fast we should be moving
+            
             Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
             // Checks if player is walking and isGrounded
@@ -163,92 +189,76 @@ public class PlayerMovement : MonoBehaviour
                 isWalking = false;
             }
 
-            // All movement calculations while sprint is active
-
-            if (Input.GetKey(sprintKey))
+            if (isSliding)
             {
-                targetVelocity = transform.TransformDirection(targetVelocity) * sprintSpeed;
-
-                // Apply a force that attempts to reach our target velocity
-                Vector3 velocity = rb.velocity;
-                Vector3 velocityChange = (targetVelocity - velocity);
-                velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
-                velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
-                velocityChange.y = 0;
-
-                // Player is only moving when valocity change != 0
-                // Makes sure fov change only happens during movement
-                if (velocityChange.x != 0 || velocityChange.z != 0)
-                {
-                    isSprinting = true;
-
-                    if (isCrouched)
-                    {
-                        Crouch();
-                    }
-
-                }
-
-                rb.AddForce(velocityChange, ForceMode.VelocityChange);
+                targetVelocity = slideDirection * slideSpeed;
             }
-            // All movement calculations while walking
+            else if (isGroundSlam)
+            {
+                targetVelocity = new Vector3(0f, -1f, 0f) * groundSlamForce;
+            }
+            else if (isDashing)
+            {
+                targetVelocity = dashDirection * dashForce;
+            }
+            else{
+                targetVelocity = transform.TransformDirection(targetVelocity) * walkSpeed;
+            }
+
+            if(justSlide)
+            {
+                targetVelocity = targetVelocity * slideAmp;
+            }
+            else if (justDash)
+            {
+                targetVelocity = targetVelocity * dashSpeedAmp;
+            }
+            // Apply a force that attempts to reach our target velocity
+            Vector3 velocity = rb.velocity;
+            Vector3 velocityChange = (targetVelocity - velocity);
+            velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
+            velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
+            if (isGroundSlam)
+            {
+                velocityChange.y = Mathf.Clamp(velocityChange.y, -maxVelocityChange, maxVelocityChange);
+            }
             else
             {
-                isSprinting = false;
-
-                targetVelocity = transform.TransformDirection(targetVelocity) * walkSpeed;
-
-                // Apply a force that attempts to reach our target velocity
-                Vector3 velocity = rb.velocity;
-                Vector3 velocityChange = (targetVelocity - velocity);
-                velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
-                velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
-                velocityChange.y = 0;
-
-                rb.AddForce(velocityChange, ForceMode.VelocityChange);
+                velocityChange.y = 0f;
             }
+            
 
+            rb.AddForce(velocityChange, ForceMode.VelocityChange);
         }
     }
 
     private void Jump()
     {
-        // Adds force to the player rigidbody to jump
-        if (isGrounded)
+        float totalJumpPower = jumpPower;
+        waitBuffer = true;
+        isGrounded = false;
+        if (justGroundSlam)
+            totalJumpPower = totalJumpPower * groundSlamAmp;
+        if (isDashing)
         {
-            rb.AddForce(0f, jumpPower, 0f, ForceMode.Impulse);
-            isGrounded = false;
+            justDash = true;
+            isDashing = false;
         }
-
-        // When crouched and using toggle system, will uncrouch for a jump
-        if (isCrouched)
+        else if (isSliding)
         {
-            Crouch();
+            Slide();
+            justSlide = true;
         }
+        rb.AddForce(0f, totalJumpPower, 0f, ForceMode.Impulse);
+        jumpAmount--;
+        Invoke("ResetGroundCheck", waitBufferDuration);
     }
 
-    private void Crouch()
+    public void ResetGroundCheck()
     {
-        // Stands player up to full height
-        // Brings walkSpeed back up to original speed
-        if (isCrouched)
-        {
-            transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
-            walkSpeed /= speedReduction;
-
-            isCrouched = false;
-        }
-        // Crouches player down to set height
-        // Reduces walkSpeed
-        else
-        {
-            transform.localScale = new Vector3(originalScale.x, crouchHeight, originalScale.z);
-            walkSpeed *= speedReduction;
-
-            isCrouched = true;
-        }
+        waitBuffer = false;
     }
-
+    #region Slide
     private void Slide()
     {
         // Stands player up to full height
@@ -256,7 +266,6 @@ public class PlayerMovement : MonoBehaviour
         if (isSliding)
         {
             transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
-            sprintSpeed /= speedIncrease;
             PlayerHeadBob.Instance.enableHeadBob = true;
             isSliding = false;
             
@@ -266,35 +275,120 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             transform.localScale = new Vector3(originalScale.x, slideHeight, originalScale.z);
-            sprintSpeed *= speedIncrease;
+            Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            if (targetVelocity.x != 0 || targetVelocity.z != 0)
+            {
+                slideDirection = transform.TransformDirection(targetVelocity);
+            }
+            else
+            {
+                slideDirection = transform.TransformDirection(Vector3.forward);
+            }
+            
             PlayerHeadBob.Instance.enableHeadBob = false;
             isSliding = true;
-            Invoke(nameof(ResetSliding), maxSlideTimer);
         }
     }
 
-    private void ResetSliding()
+    public void ResetSlide()
     {
-        if(isSliding)
-        {
-            Slide();
-        }      
+
     }
+    #endregion
+
+    #region ground slam
+    public void GroundSlam()
+    {
+        PlayerHeadBob.Instance.enableHeadBob = false;
+        isGroundSlam = true;
+    }
+
+    public void GroundSlamShockwave()
+    {
+        Collider[] hitEnemies = Physics.OverlapSphere(transform.position, groundSlamRadius, enemyLayers);
+
+        // Apply damage to all enemies hit by the sphere
+        foreach (Collider unit in hitEnemies)
+        {
+            Debug.Log("adaUnit");
+            IDamageable damageable = unit.GetComponent<IDamageable>();
+            if (damageable != null)
+            {
+                Debug.Log("Ground Pounded");
+                damageable.TakeDamage(groundSlamDamage);
+            }
+        }
+        isGroundSlam = false;
+        justGroundSlam = true;
+        Invoke(nameof(ResetGroundSlam), groundSlamLinger);
+    }
+
+    public void ResetGroundSlam()
+    {
+        justGroundSlam = false;
+    }
+    #endregion
+
+    #region Dash
+    public void Dash()
+    {
+        if (isDashing) return;
+        
+        isDashing = true;
+        rb.useGravity = false;
+        PlayerHeadBob.Instance.enableHeadBob = false;
+        Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        if (targetVelocity.x != 0 || targetVelocity.z != 0)
+        {
+            dashDirection = transform.TransformDirection(targetVelocity);
+        }
+        else
+        {
+            dashDirection = transform.TransformDirection(Vector3.forward);
+        }
+
+        Invoke("ResetDash",maxDashDuration);
+    }
+
+    private void ResetDash()
+    {
+        if(isDashing)
+        {
+            isDashing = false;
+        }
+        playerCanMove = true;
+        rb.useGravity = true;
+        PlayerHeadBob.Instance.enableHeadBob = true;
+    }
+
+    #endregion
 
     private void CheckGround()
     {
+        if (waitBuffer) return;
         Vector3 origin = new Vector3(transform.position.x, transform.position.y - (transform.localScale.y * .5f), transform.position.z);
         Vector3 direction = transform.TransformDirection(Vector3.down);
-        float distance = .75f;
+        float distance = 1f;
 
         if (Physics.Raycast(origin, direction, out RaycastHit hit, distance))
         {
             Debug.DrawRay(origin, direction * distance, Color.red);
             isGrounded = true;
+            canSlide = true;
+            justSlide = false;
+            justDash = false;
+            jumpAmount = maxJumpAmount;
         }
         else
         {
             isGrounded = false;
+            canSlide = false;
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, groundSlamRadius);
     }
 }

@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class BossAtum : BossBase
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-
+    private void Start()
+    {        
+        StartCoroutine(nameof(IsiHealth));
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
+        UpdateHealthDisplay();
         if (currentHealth <= maxHealth * 90 / 100)
         {
             //not attack

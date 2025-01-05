@@ -6,8 +6,9 @@ public class EnemyHealthDisplay : MonoBehaviour
 {
 
     [Header("References")]
-    public RectTransform healthDisplay;
-    public RectTransform healthBGDisplay;
+    [SerializeField] private RectTransform healthDisplay;
+    [SerializeField] private RectTransform healthBGDisplay;
+    [SerializeField] private Transform healthCanvas;
     public EnemyAI enemyAI;
 
     [Header("Stats")]
@@ -37,6 +38,6 @@ public class EnemyHealthDisplay : MonoBehaviour
         currentHealth = enemyAI.currentHealth;
         maxHealth = enemyAI.maxHealth;
         healthDisplay.sizeDelta = new Vector2((currentHealth / maxHealth) * healthBGDisplay.sizeDelta.x, healthBGDisplay.sizeDelta.y);
-        transform.LookAt(enemyAI.player);
+        healthCanvas.LookAt(enemyAI.player);
     }
 }

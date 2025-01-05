@@ -5,21 +5,24 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour, IParryable
 {
     public Rigidbody rb;
+
+    public float bulletDamage;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
     private void Start()
     {
-        Destroy(gameObject,5f);
+        Destroy(gameObject,3f);
     }
+
 
     private void OnCollisionEnter(Collision coll)
     {
         IDamageable damageable = coll.gameObject.GetComponent<IDamageable>();
         if(damageable != null)
         {
-            damageable.TakeDamage(10f);
+            damageable.TakeDamage(bulletDamage);
         }
         Destroy(this.gameObject);
     }
