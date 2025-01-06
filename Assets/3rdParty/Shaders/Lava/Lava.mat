@@ -85,7 +85,7 @@ Material:
     - _VoronoiScale: 15
     m_Colors:
     - _BottomRemap: {r: 0.5, g: 1, b: 0, a: 0}
-    - _FresnelColor: {r: 5.960785, g: 2.6527052, b: 1.46679, a: 0}
+    - _FresnelColor: {r: 7.2824264, g: 3.2703485, b: 1.8320563, a: 0}
     - _LavaBackground: {r: 7.958114, g: 7.958114, b: 7.958114, a: 0}
     - _LavaColor: {r: 3.524496, g: 0.94109577, b: 0, a: 1}
     - _LavaNormalSpeed: {r: 0.15, g: 0, b: 0, a: 0}
