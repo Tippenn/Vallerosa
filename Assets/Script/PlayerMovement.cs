@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Slide")]
     public float slideHeight = .75f;
     public float slideSpeed = 8f;
-    public float slideAmp = 1.6f;
+    public float slideAmp = 2f;
     public bool justSlide = false;
     public KeyCode slideKey = KeyCode.LeftControl;
     public Vector3 slideDirection;
@@ -100,6 +100,18 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        CheckWalkingSFX();
+        
+        if (LevelManager.instance)
+        {
+            if (LevelManager.instance.isPaused)
+            {
+                return;
+            }
+        }
+
+        
+
         #region Sprint
 
         #endregion
@@ -249,7 +261,15 @@ public class PlayerMovement : MonoBehaviour
             Slide();
             justSlide = true;
         }
-        rb.AddForce(0f, totalJumpPower, 0f, ForceMode.Impulse);
+
+        if(jumpAmount == 1)
+        {
+            rb.AddForce(0f, totalJumpPower*1.5f, 0f, ForceMode.Impulse);
+        }
+        else
+        {
+            rb.AddForce(0f, totalJumpPower, 0f, ForceMode.Impulse);
+        }
         jumpAmount--;
         Invoke("ResetGroundCheck", waitBufferDuration);
     }
@@ -383,6 +403,30 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = false;
             canSlide = false;
+        }
+    }
+
+    public void Teleport(Vector3 position)
+    {
+        transform.position = position;
+    }
+
+    public void CheckWalkingSFX()
+    {
+        if (!LevelManager.instance.isPaused)
+        {
+            if (isWalking == true)
+            {
+                AudioManager.Instance.turnOn(AudioManager.Instance.walking);
+            }
+            else
+            {
+                AudioManager.Instance.turnOff(AudioManager.Instance.walking);
+            }
+        }
+        else
+        {
+            AudioManager.Instance.turnOff(AudioManager.Instance.walking);
         }
     }
 

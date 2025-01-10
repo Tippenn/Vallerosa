@@ -49,6 +49,11 @@ public class PlayerAttack : MonoBehaviour
     public Gunmode gunmode = Gunmode.single;
     public KeyCode switchModeKey = KeyCode.Q;
 
+    //reload
+    public bool isChargeSound;
+    public float chargeSoundCooldown;
+    public float chargeSoundDuration;
+
     private void Awake()
     {
         Instance = this;
@@ -65,11 +70,20 @@ public class PlayerAttack : MonoBehaviour
         {
             return;
         }
+
+        if (LevelManager.instance)
+        {
+            if (LevelManager.instance.isPaused)
+            {
+                return;
+            }
+        }
         #region range
-        if(gunmode == Gunmode.single)
+        if (gunmode == Gunmode.single)
         {
             if (Input.GetKeyDown(rangeAttackKey) && readyToRangeAttack && stats.currentMag > 5f)
             {
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.singleShot);
                 readyToRangeAttack = false;
                 Debug.Log("nembak");
                 RangeAttack();
@@ -109,7 +123,7 @@ public class PlayerAttack : MonoBehaviour
 
         #region melee
         // Trigger attack on left mouse click (or customize the key)
-        if (Input.GetKeyDown(KeyCode.V) && readyToMeleeAttack)
+        if (Input.GetKeyDown(meleeAttackKey) && readyToMeleeAttack)
         {
             readyToMeleeAttack = false;
             PlayMeleeAttack();
@@ -133,14 +147,28 @@ public class PlayerAttack : MonoBehaviour
         if (isCharging)
         {
             ChargeWeapon();
+            if(isChargeSound)
+            {
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.reload);
+                isChargeSound = false;
+            }
+            else
+            {
+                chargeSoundDuration += Time.deltaTime;
+                if(chargeSoundCooldown <= chargeSoundDuration)
+                {
+                    isChargeSound = true;
+                    chargeSoundDuration = 0f;
+                }
+            }
         }
         #endregion
 
         #region switch mode
-        if (Input.GetKeyDown(switchModeKey))
-        {
-            SwitchGunMode();
-        }
+        //if (Input.GetKeyDown(switchModeKey))
+        //{
+        //    SwitchGunMode();
+        //}
 
         #endregion
     }

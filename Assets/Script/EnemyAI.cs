@@ -98,7 +98,6 @@ public class EnemyAI : MonoBehaviour,IDamageable
 
     public void Idle()
     {
-        Debug.Log("idle");
         agent.SetDestination(transform.position);
         if(animator != null)
         {
@@ -110,7 +109,6 @@ public class EnemyAI : MonoBehaviour,IDamageable
 
     public void ChasePlayer()
     {
-        Debug.Log("chasing");
         agent.SetDestination(player.position);
         if (animator != null)
         {
@@ -143,10 +141,11 @@ public class EnemyAI : MonoBehaviour,IDamageable
     //for animation trigger
     public void RangeAttack()
     {
-        Rigidbody rb = Instantiate(rangeAttackPrefab, rangeAttackPoint.position, rangeAttackPoint.rotation).GetComponent<Rigidbody>();
+        Vector3 direction = (player.position - rangeAttackPoint.position).normalized;
 
-        rb.AddForce(rb.transform.forward * 12f, ForceMode.Impulse);
-        rb.AddForce(transform.up * 2f, ForceMode.Impulse);
+        Rigidbody rb = Instantiate(rangeAttackPrefab, rangeAttackPoint.position, rangeAttackPoint.rotation).GetComponent<Rigidbody>();
+        rb.transform.forward = direction;
+        rb.AddForce(rb.transform.forward * 15f, ForceMode.Impulse);
     }
 
     public void ResetRangeAttack()

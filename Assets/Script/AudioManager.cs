@@ -7,20 +7,23 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance { get; private set; }
 
     [Header("----Audio Source----")]
-    [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource SFXSource;
+    public AudioSource musicSource;
+    public AudioSource SFXSource;
+    public AudioSource walking;
 
     [Header("Audio Clip")]
     [Header("-SFX")]
-    public AudioClip backGround;
+    //main char
     public AudioClip walk;
-    public AudioClip damage;
-    public AudioClip jump;
-    public AudioClip playerDeath;
-    public AudioClip shoot;
+    public AudioClip crouch;
+    public AudioClip takingDamage;
     public AudioClip reload;
-    public AudioClip enemyDeath;
-    public AudioClip onClick;
+    public AudioClip singleShot;
+    //monster
+    //aranbatum
+    public AudioClip aranBatumRoar;
+    //suki
+    public AudioClip sukiRoar;
 
     [Header("-BGM")]
     public AudioClip normal;
@@ -47,10 +50,7 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            PlaySFX(onClick);
-        }
+
     }
 
     public void PlaySFX(AudioClip clip)
@@ -58,4 +58,12 @@ public class AudioManager : MonoBehaviour
         SFXSource.PlayOneShot(clip);
     }
 
+    public void turnOn(AudioSource audio)
+    {
+        walking.enabled = true;
+    }
+    public void turnOff(AudioSource audio)
+    {
+        walking.enabled = false;
+    }
 }

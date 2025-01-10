@@ -1499,8 +1499,8 @@ MonoBehaviour:
   rangeAttackPoint: {fileID: 4199670500216526537}
   timeBetweenRangeAttacks: 4.3
   meleeAttackRange: 3
-  rangeAttackRange: 10
-  sightRange: 20
+  rangeAttackRange: 20
+  sightRange: 50
   playerInMeleeAttackRange: 0
   playerInRangeAttackRange: 0
   playerInSightRange: 0

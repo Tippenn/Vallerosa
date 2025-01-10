@@ -419,7 +419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1278332941680265688
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5568,7 +5568,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4459864850019384750}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7bdef321b76c5634dad2df2a4e3a52f3, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5592,7 +5592,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4459864850019384750}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -5610,7 +5610,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!95 &614423605527830069
 Animator:
   serializedVersion: 5
@@ -5655,7 +5655,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 1024
-  meleeAttackKey: 118
+  meleeAttackKey: 324
   fpsCamera: {fileID: 4459864851310106426}
   rangeAttackDamage: 20
   rangeAttackRange: 50
@@ -5677,6 +5677,9 @@ MonoBehaviour:
   lineRenderer: {fileID: 5116688828306813715}
   gunmode: 0
   switchModeKey: 113
+  isChargeSound: 0
+  chargeSoundCooldown: 0
+  chargeSoundDuration: 0
 --- !u!114 &961295350925140484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5713,6 +5716,7 @@ MonoBehaviour:
   parryRadius: 1
   readyToParry: 1
   parryCooldown: 0.5
+  parryKey: 118
 --- !u!114 &8304826123177437538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5731,7 +5735,6 @@ MonoBehaviour:
   energyBGDisplay: {fileID: 8821198580207282105}
   magDisplay: {fileID: 3960212104998966234}
   magBGDisplay: {fileID: 959077463328015339}
-  deadCanvas: {fileID: 0}
   currentHealth: 0
   maxHealth: 250
   currentEnergy: 0
@@ -5757,7 +5760,7 @@ MonoBehaviour:
   maxVelocityChange: 200
   isWalking: 0
   dashKey: 304
-  dashForce: 60
+  dashForce: 40
   dashSpeedIncrease: 2
   dashSpeedAmp: 2.3
   dashFOV: 80
@@ -5769,7 +5772,7 @@ MonoBehaviour:
   justDash: 0
   enableJump: 1
   jumpKey: 32
-  jumpPower: 5
+  jumpPower: 10
   maxJumpAmount: 2
   isGrounded: 0
   jumpAmount: 0

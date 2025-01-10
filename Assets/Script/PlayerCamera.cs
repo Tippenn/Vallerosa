@@ -41,9 +41,9 @@ public class PlayerCamera : MonoBehaviour
             return;
         }
         #region Camera
-        yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
+        yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity * Time.timeScale;
 
-        pitch -= mouseSensitivity * Input.GetAxis("Mouse Y");
+        pitch -= mouseSensitivity * Input.GetAxis("Mouse Y") * Time.timeScale;
 
         // Clamp pitch between lookAngle
         pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);

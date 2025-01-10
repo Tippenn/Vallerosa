@@ -13,7 +13,6 @@ public class PlayerStats : MonoBehaviour,IDamageable
     public RectTransform energyBGDisplay;
     public RectTransform magDisplay;
     public RectTransform magBGDisplay;
-    public GameObject deadCanvas;
 
     [Header("Stats")]
     public float currentHealth;
@@ -35,12 +34,13 @@ public class PlayerStats : MonoBehaviour,IDamageable
         currentEnergy = maxEnergy;
         currentHealth = maxHealth;
         currentMag = maxMag;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (PlayerStats.Instance.isDead || PlayerStats.Instance.isWin)
+        if (isDead || isWin)
         {
             Cursor.lockState = CursorLockMode.None;
             return;
@@ -54,6 +54,7 @@ public class PlayerStats : MonoBehaviour,IDamageable
     {
         currentHealth -= damage;
         AddEnergy(15f);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.takingDamage);
         if (currentHealth < 0)
         {
             Dead();
@@ -92,17 +93,12 @@ public class PlayerStats : MonoBehaviour,IDamageable
     {
         magDisplay.sizeDelta = new Vector2((magBGDisplay.sizeDelta.x), (currentMag / maxMag) * magBGDisplay.sizeDelta.y);
     }
-    
+
     public void Dead()
     {
         Time.timeScale = 0f;
-        deadCanvas.SetActive(true);
+        LevelManager.instance.loseUI.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         isDead = true;
-        Invoke(nameof(RestartLevel), 2f);
-    }
-    public void RestartLevel()
-    {
-        LevelManager.instance.RestartLevel();
     }
 }

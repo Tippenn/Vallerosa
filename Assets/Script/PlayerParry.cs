@@ -8,6 +8,7 @@ public class PlayerParry : MonoBehaviour
     public float parryRadius;
     public bool readyToParry = true;
     public float parryCooldown = 0.5f;
+    public KeyCode parryKey;
 
     private Animator animator;
 
@@ -23,7 +24,14 @@ public class PlayerParry : MonoBehaviour
         {
             return;
         }
-        if (Input.GetButtonDown("Fire2") && readyToParry)
+        if (LevelManager.instance)
+        {
+            if (LevelManager.instance.isPaused)
+            {
+                return;
+            }
+        }
+        if (Input.GetKeyDown(parryKey) && readyToParry)
         {
             Debug.Log("attacking");
             readyToParry = false;

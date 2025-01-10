@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,6 +9,7 @@ public class DungeonEnterTrigger : MonoBehaviour
     public enum DungeonMode
     {
         normal,
+        miniboss,
         boss
     }
 
@@ -16,19 +18,28 @@ public class DungeonEnterTrigger : MonoBehaviour
     public GameObject monsterMeleePrefab;
     public Transform[] monsterRangeSpawnLocation;
     public Transform[] monsterMeleeSpawnLocation;
-    
-    
+
+    [Header("Miniboss Mode")]
+    public GameObject minibossPrefab;
+    public Transform minibossSpawnLocation;
+    public string minibossName;
+
     [Header("Boss Mode")]
     public GameObject bossPrefab;
     public Transform bossSpawnLocation;
-    public BossSuki bossSuki;
+    public string bossName;
 
     [Header("Everything Else")]
+    [SerializeField] private GameObject bossHealthDisplay;
+    [SerializeField] private RectTransform healthDisplay;
+    [SerializeField] private RectTransform healthBGDisplay;
+    [SerializeField] private TMP_Text bossNameDisplay;
     public Collider[] boundaries;
     public DungeonMode dungeonMode;
     public bool alreadyTriggered;
     public int totalDeath;
     public int deathNeeded;
+    public bool allMonsterKilled = false;
     public UnityEvent onEnter;
     public UnityEvent onAllMonsterDeath;
     
@@ -40,8 +51,9 @@ public class DungeonEnterTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(totalDeath == deathNeeded)
+        if(totalDeath == deathNeeded && !allMonsterKilled)
         {
+            allMonsterKilled = true;
             onAllMonsterDeath?.Invoke();
         }
     }
@@ -82,11 +94,6 @@ public class DungeonEnterTrigger : MonoBehaviour
     {
         LevelManager.instance.bossUI.gameObject.SetActive(true);   
     }
-
-    public void ActivateBossScript()
-    {
-        bossSuki.enabled = true;
-    }
     
     public void SpawnEnemy()
     {
@@ -103,15 +110,50 @@ public class DungeonEnterTrigger : MonoBehaviour
                 enemy.dungeonSource = this;
             }
         }
+        else if(dungeonMode == DungeonMode.miniboss)
+        {
+            bossHealthDisplay.SetActive(true);
+            BossBase boss = Instantiate(minibossPrefab,minibossSpawnLocation.position, Quaternion.identity).GetComponent<BossBase>();
+            boss.dungeonSource = this;
+            boss.healthDisplay = healthDisplay;
+            boss.healthBGDisplay = healthBGDisplay;
+            bossNameDisplay.text = minibossName;
+        }
         else
         {
-            BossBase boss = Instantiate(bossPrefab,bossSpawnLocation.position, Quaternion.identity).GetComponent<BossBase>();
+            bossHealthDisplay.SetActive(true);
+            BossBase boss = Instantiate(bossPrefab, bossSpawnLocation.position, Quaternion.identity).GetComponent<BossBase>();
+            boss.dungeonSource = this;
+            boss.healthDisplay = healthDisplay;
+            boss.healthBGDisplay = healthBGDisplay;
+            bossNameDisplay.text = bossName;
         }
         
     }
-
-    public void MinibossBeat()
+    public void ChangeMiniBossBGM()
     {
-        
+        //AudioManager.Instance.musicSource.Stop();
+        AudioManager.Instance.musicSource.clip = AudioManager.Instance.miniboss;
+        AudioManager.Instance.musicSource.Play();
+    }
+
+    public void ChangeBossBGM()
+    {
+        //AudioManager.Instance.musicSource.Stop();
+        AudioManager.Instance.musicSource.clip = AudioManager.Instance.boss;
+        AudioManager.Instance.musicSource.Play();
+    }
+
+    public void ChangeNormalBGM()
+    {
+        //AudioManager.Instance.musicSource.Stop();
+        AudioManager.Instance.musicSource.clip = AudioManager.Instance.normal;
+        AudioManager.Instance.musicSource.Play();
+    }
+
+
+    public void TurnoffBossUI()
+    {
+        bossHealthDisplay.SetActive(false);
     }
 }
